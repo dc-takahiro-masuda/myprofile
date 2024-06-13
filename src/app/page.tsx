@@ -5,7 +5,6 @@ import { MenubarShortcut } from "@/components/ui/menubar";
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from "@/components/ui/menubar";
 import Header from "@/mycomponents/Header";
 import IndentBlock from "@/mycomponents/IndentBlock";
-import Profile from "@/mycomponents/Profile";
 import TopicCard from "@/mycomponents/TopicCard";
 import Image from "next/image";
 import Link from "next/link";

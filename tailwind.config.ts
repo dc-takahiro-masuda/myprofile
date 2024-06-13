@@ -17,6 +17,9 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      "caveat": ["caveat","sans-serif"]
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +64,9 @@ const config = {
       transitionDelay: {
         "800":"800ms",
         "1500":"1500ms",
+      },
+      screens: {
+        'h-lg': { 'raw': '(min-height: 900px)' },
       },
       keyframes: {
         "accordion-down": {
