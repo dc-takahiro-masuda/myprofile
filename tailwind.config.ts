@@ -1,3 +1,4 @@
+import { red } from "@mui/material/colors"
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -108,14 +109,26 @@ const config = {
           to: {
             opacity:"1",
           }
-        }
+        },
+        "duplicate-warning": {
+          from: {
+            backgroundColor: "rgba(255,69,0,1)"
+          },
+          "50%": {
+            backgroundColor: "rgba(255,69,0,0.5)"
+          },
+          to: {
+            backgroundColor: "rgba(255,69,0,0)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-right": "fade-in-right 0.6s ease-out   both",
         "zoom-in-selfy": "zoom-in-selfy 0.5s ease-out",
-        "spin-myname":"spin-myname 0.4s ease-in forwards"
+        "spin-myname":"spin-myname 0.4s ease-in forwards",
+        "duplicate-warning": "duplicate-warning 0.7s ease-in",
       },
     },
   },

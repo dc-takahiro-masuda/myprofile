@@ -9,6 +9,7 @@ const Header: React.FC = () => {
                 PORTFORIO
             </div>
             <div className="flex space-x-4 ">
+                <Link href="/game">GAME</Link>
                 <Link href="/works">WORKS</Link>
                 <Link href="/aboutme">ABOUT ME</Link>
             </div>
