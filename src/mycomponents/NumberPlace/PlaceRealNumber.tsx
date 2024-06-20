@@ -49,6 +49,7 @@ const PlaceRealNumber: React.FC<props> = ({ row, col }) => {
                             {arr.map((num, j) => {
                                 return (
                                     <NumberButton
+                                        key={j}
                                         num={num}
                                         onClick={() => {
                                             setBoard({ row, col, num })

@@ -50,7 +50,7 @@ const NumberPlace: React.FC<props> = ({ constPos }) => {
                             className += "border-r-2 border-r-slate-700 "
                         }
                         return (
-                            <div className="relative">
+                            <div key={colIndex} className="relative">
                                 <PlaceRealNumber col={colIndex} row={rowIndex} />
                                 <Square 
                                 constFlag={
