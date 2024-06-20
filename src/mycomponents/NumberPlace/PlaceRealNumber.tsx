@@ -45,7 +45,7 @@ const PlaceRealNumber: React.FC<props> = ({ row, col }) => {
             <div className="flex flex-col items-center">
                 {
                     numbers.map((arr, i) => (
-                        <div>
+                        <div key={i}>
                             {arr.map((num, j) => {
                                 return (
                                     <NumberButton
