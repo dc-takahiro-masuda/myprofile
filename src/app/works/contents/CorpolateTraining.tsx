@@ -3,7 +3,7 @@ import React from "react"
 const CorpolateTraining: React.FC = () => {
     return (
         <div>
-            <h2 className="font-bold">ドリームキャリア内で2か月間研修を受けました。</h2>
+            <h2 className="font-bold">新卒で入社した所属会社で2か月間研修を受けました。</h2>
             <div>
                 研修ではhtmlやインターネットの仕組みなど初歩的な部分から始まって、最終的にはReactとSpringBootを学び、それを用いた開発演習を行いました。
             </div>

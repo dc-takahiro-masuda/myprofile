@@ -6,7 +6,7 @@ const AboutPortfolio: React.FC = () => {
             <div className="font-semibold">ポートフォリオとして乗せれるサイトが殆ど無かったため、このサイトを作成しました。</div>
             <div>このサイトのソースコードは<a className="alink" href="https://github.com/dc-takahiro-masuda/myprofile">こちら</a>に載せておきます。</div>
             <div>こちらのサイトの内容は今後も充実させていきたいと考えています。</div>
-            <div><span>使用した技術:</span>Next.js, TypeScript</div>
+            <div><span>使用した技術:</span>Next.js, TypeScript, Jotai, tailwind</div>
         </div>
     )
 }
