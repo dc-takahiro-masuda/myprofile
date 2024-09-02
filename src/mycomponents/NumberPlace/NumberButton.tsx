@@ -5,6 +5,7 @@ interface props {
     onClick: () => void
 }
 
+//　数字1マスを表示するためのコンポーネント
 const NumberButton: React.FC<props> = ({ num, onClick }) => {
     return (
         <button

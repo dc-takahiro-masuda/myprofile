@@ -1,5 +1,6 @@
 import React from "react"
 
+// 初期からおかれている数字のコンポーネント
 const ConstSquare: React.FC<{num: number,className:string}> = ({num,className}) => {
     return (
         <div

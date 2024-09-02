@@ -4,9 +4,10 @@ import NotListedLocationIcon from '@mui/icons-material/NotListedLocation';
 import PlaceRealNumber from "./PlaceRealNumber";
 import { useAtom, useAtomValue } from "jotai";
 import { errorAtom, errorTypeAtom, writePlaceNumberFlagAtom } from "./atom";
+import useSquare from "./useSquare";
 
 interface props {
-    constFlag:boolean,
+    constFlag: boolean,
     col: number,
     row: number,
     num: number,
@@ -14,54 +15,10 @@ interface props {
 }
 
 const Square: React.FC<props> = ({ constFlag, col, row, num, className }) => {
-    const [flag, writeFlag] = useAtom(writePlaceNumberFlagAtom)
-    const error = useAtomValue(errorAtom)
-    const ref = useRef<HTMLDivElement>(null!)
-    const errorType = useAtomValue(errorTypeAtom)
-
-    const handleRealPlaceNumberClick = () => {
-        console.log("clicked!")
-        writeFlag({ row, col, flag: true })
-        console.log(flag)
-    }
-
-    useEffect(() => {
-        if (error[row][col]) {
-            if (errorType === "row-error") {
-                const timer1 = setTimeout(() => {
-                    ref.current.classList.add("animate-duplicate-warning")
-                }, col * 50)
-                const timer2 = setTimeout(() => {
-                    ref.current.classList.remove("animate-duplicate-warning")
-                }, 600)
-                return () => {
-                    clearTimeout(timer1)
-                    clearTimeout(timer2)
-                }
-            }
-            if (errorType === "col-error") {
-                const timer1 = setTimeout(() => {
-                    ref.current.classList.add("animate-duplicate-warning")
-                }, row * 50)
-                const timer2 = setTimeout(() => {
-                    ref.current.classList.remove("animate-duplicate-warning")
-                }, 600)
-                return () => {
-                    clearTimeout(timer1)
-                    clearTimeout(timer2)
-                }
-            }
-            if (errorType === "area-error") {
-                ref.current.classList.add("animate-duplicate-warning")
-                const timer2 = setTimeout(() => {
-                    ref.current.classList.remove("animate-duplicate-warning")
-                }, 600)
-                return () => {
-                    clearTimeout(timer2)
-                }
-            }
-        }
-    }, [error])
+    const {
+        handleRealPlaceNumberClick,
+        ref,
+    } = useSquare({ col, row })
 
     return (
         <div

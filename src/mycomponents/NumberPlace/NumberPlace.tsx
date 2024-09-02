@@ -11,10 +11,39 @@ interface props {
     constPos: number[][]
 }
 
-
 const NumberPlace: React.FC<props> = ({ constPos }) => {
     const [board, setBoard] = useAtom(boardAtom)
     const errorMessage = useAtomValue(errorMessageAtom)
+
+    // 3マスごとにボーダーを設置するためにクラスネームを生成する
+    const makeClassName = (rowIndex:number,colIndex:number) => {
+        let className = ""
+        if (rowIndex === 0) {
+            className += "border-t-2 border-t-slate-700 "
+        }
+        if (rowIndex === 2) {
+            className += "border-b-slate-700 "
+        }
+        if (rowIndex === 5) {
+            className += "border-b-slate-700 "
+        }
+        if (rowIndex === 8) {
+            className += "border-b-2 border-b-slate-700 "
+        }
+        if (colIndex === 0) {
+            className += "border-l-2 border-l-slate-700 "
+        }
+        if (colIndex === 2) {
+            className += "border-r-slate-700 "
+        }
+        if (colIndex === 5) {
+            className += "border-r-slate-700 "
+        }
+        if (colIndex === 8) {
+            className += "border-r-2 border-r-slate-700 "
+        }
+        return className
+    }
 
     return (
         <div>
@@ -24,31 +53,7 @@ const NumberPlace: React.FC<props> = ({ constPos }) => {
             {board.map((row, rowIndex) => (
                 <div key={rowIndex} className="flex">
                     {row.map((cell, colIndex) => {
-                        let className = ""
-                        if (rowIndex === 0) {
-                            className += "border-t-2 border-t-slate-700 "
-                        }
-                        if (rowIndex === 2) {
-                            className += "border-b-slate-700 "
-                        }
-                        if (rowIndex === 5) {
-                            className += "border-b-slate-700 "
-                        }
-                        if (rowIndex === 8) {
-                            className += "border-b-2 border-b-slate-700 "
-                        }
-                        if (colIndex === 0) {
-                            className += "border-l-2 border-l-slate-700 "
-                        }
-                        if (colIndex === 2) {
-                            className += "border-r-slate-700 "
-                        }
-                        if (colIndex === 5) {
-                            className += "border-r-slate-700 "
-                        }
-                        if (colIndex === 8) {
-                            className += "border-r-2 border-r-slate-700 "
-                        }
+                        const className = makeClassName(rowIndex,colIndex)
                         return (
                             <div key={colIndex} className="relative">
                                 <PlaceRealNumber col={colIndex} row={rowIndex} />

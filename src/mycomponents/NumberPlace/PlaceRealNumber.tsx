@@ -13,7 +13,7 @@ const PlaceRealNumber: React.FC<props> = ({ row, col }) => {
     const flag = useAtomValue(writePlaceNumberFlagAtom)
     const error = useAtomValue(errorAtom)
     const [board, setBoard] = useAtom(writeBoardAtom)
-    const numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    const numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9],[0]]
 
     const handleClickOutside = (e: MouseEvent) => {
         if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -21,6 +21,7 @@ const PlaceRealNumber: React.FC<props> = ({ row, col }) => {
         }
     };
 
+    // クリックされたところだけ、数字を置くインターフェースを表示をする
     useEffect(() => {
         if (flag[row][col]) {
             ref.current.style.display = "inline"
